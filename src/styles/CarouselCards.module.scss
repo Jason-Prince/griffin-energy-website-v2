@@ -1,0 +1,74 @@
+.embla {
+    overflow: hidden;
+    .embla_container {
+        display: flex;
+        .embla_slide {
+            position: relative;
+            flex: 0 0 100%;
+        }
+    }
+}
+
+// .card {
+//     position: relative;
+//     overflow: scroll;
+//     display: grid;
+//     grid-template-columns: 1fr auto 1fr;
+//     grid-template-areas:
+//         ". image_container ."
+//         ". content_container .";
+//     overflow: hidden;
+//     .nav {
+//         position: absolute;
+//         width: 100%;
+//         aspect-ratio: 1.23;
+//         z-index: 1;
+//         display: grid;
+//         grid-template-columns: 1fr auto 1fr;
+//         grid-template-areas: "prev . next";
+//         .next {
+//             grid-area: next;
+//             z-index: 1;
+//             place-self: center end;
+//             font-size: 3rem;
+//             margin: 1rem;
+//             padding: 0.15rem;
+//             border: 2px solid transparent;
+//             &:hover {
+//                 cursor: pointer;
+//                 background-color: rgba(0, 0, 0, 0.4);
+//                 border-radius: 10000px;
+//                 border: 2px solid white;
+//             }
+//         }
+//         .prev {
+//             grid-area: prev;
+//             z-index: 1;
+//             place-self: center start;
+//             font-size: 3rem;
+//             margin: 1rem;
+//             padding: 0.15rem;
+//             border: 2px solid transparent;
+//             &:hover {
+//                 cursor: pointer;
+//                 background-color: rgba(0, 0, 0, 0.4);
+//                 border-radius: 10000px;
+//                 border: 2px solid white;
+//             }
+//         }
+//     }
+//     .image_container {
+//         grid-area: image_container;
+//         overflow: hidden;
+//         display: grid;
+//         width: 100%;
+//         aspect-ratio: 1.23;
+//         .images {
+//             display: grid;
+//             z-index: 0;
+//         }
+//     }
+//     .content_container {
+//         grid-area: content_container;
+//     }
+// }

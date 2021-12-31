@@ -1,0 +1,683 @@
+@import "variables";
+@import "breakpoints";
+
+.grid_wrapper {
+    margin-top: 3.5rem;
+
+    display: grid;
+    row-gap: 3rem;
+    grid-template-columns: 1fr 10fr 1fr;
+    grid-template-areas:
+        "section_zero_net_energy section_zero_net_energy section_zero_net_energy"
+        "section_certifications section_certifications section_certifications"
+        "section_non_certifications section_non_certifications section_non_certifications"
+        "section_project_credits section_project_credits section_project_credits";
+
+    .section_zero_net_energy {
+        grid-area: section_zero_net_energy;
+
+        background-color: $color-rust;
+
+        display: grid;
+        justify-items: center;
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+        grid-template-areas:
+            "title"
+            "card_zne_multifamily_infografic"
+            "card_zne_residential_infographic"
+            "summary";
+
+        .title {
+            grid-area: title;
+            margin-top: 2rem;
+
+            text-align: center;
+            font-family: $font-family-montserrat;
+            font-size: 1.35rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            line-height: 1.5rem;
+            color: white;
+
+            border: 3px solid black;
+            width: 250px;
+            padding: 10px 0;
+        }
+
+        .card_zne_multifamily_infografic {
+            grid-area: card_zne_multifamily_infografic;
+
+            width: 100%;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            grid-template-columns: 1fr 10fr 1fr;
+            grid-template-rows: auto auto 25px auto;
+            grid-template-areas:
+                ". h3 ."
+                ". img .";
+            .h3 {
+                grid-area: h3;
+
+                text-align: center;
+                font-family: $font-family-montserrat;
+                font-size: 1.35rem;
+                font-weight: 600;
+                letter-spacing: 1px;
+                line-height: 1.5rem;
+                color: white;
+            }
+            .img {
+                grid-area: img;
+
+                width: 100%;
+            }
+        }
+        .card_zne_residential_infographic {
+            grid-area: card_zne_residential_infographic;
+
+            width: 100%;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            grid-template-columns: 1fr 10fr 1fr;
+            grid-template-rows: auto auto 25px auto;
+            grid-template-areas:
+                ". h3 ."
+                ". img .";
+            .h3 {
+                grid-area: h3;
+
+                text-align: center;
+                font-family: $font-family-montserrat;
+                font-size: 1.35rem;
+                font-weight: 600;
+                letter-spacing: 1px;
+                line-height: 1.5rem;
+                color: white;
+            }
+            .img {
+                grid-area: img;
+
+                width: 100%;
+            }
+        }
+        .summary {
+            grid-area: summary;
+
+            width: 100%;
+            display: grid;
+            justify-items: center;
+            grid-template-columns: 1fr 10fr 1fr;
+            grid-template-areas: ". paragraph_wrapper .";
+
+            .paragraph_wrapper {
+                grid-area: paragraph_wrapper;
+                align-self: flex-start;
+
+                padding-bottom: 2rem;
+
+                text-indent: 1.5rem;
+                text-align: left;
+                font-family: $font-family-roboto;
+                font-size: 1rem;
+                font-weight: 400;
+                letter-spacing: 1px;
+                line-height: 1.5rem;
+                color: white;
+            }
+        }
+    }
+    .section_certifications {
+        grid-area: section_certifications;
+
+        display: grid;
+        justify-items: center;
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+        grid-template-areas:
+            "section_title"
+            "card_living_building_challenge"
+            "card_green_globes"
+            "card_highland_drive"
+            "card_lincoln_lane"
+            "section_summary";
+        .section_title {
+            grid-area: section_title;
+
+            text-align: center;
+            font-family: $font-family-montserrat;
+            font-size: 1.35rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            line-height: 1.5rem;
+            color: black;
+
+            border: 3px solid black;
+            width: 250px;
+            height: 50px;
+            padding: 10px 0;
+        }
+        .card_living_building_challenge {
+            grid-area: card_living_building_challenge;
+
+            width: 100%;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            grid-template-columns: 1fr 10fr 1fr;
+            grid-template-rows: auto auto 25px auto;
+            grid-template-areas:
+                ". h3 ."
+                ". img ."
+                ". img_logo ."
+                ". description .";
+
+            .h3 {
+                grid-area: h3;
+
+                text-align: center;
+                font-family: $font-family-montserrat;
+                font-size: 1.35rem;
+                font-weight: 600;
+                letter-spacing: 1px;
+                line-height: 1.5rem;
+                color: black;
+            }
+            .img {
+                grid-area: img;
+
+                width: 100%;
+            }
+            .description {
+                grid-area: description;
+                font-family: $font-family-roboto;
+                font-size: 0.9rem;
+                font-weight: 400;
+                letter-spacing: 1px;
+                line-height: 1.5rem;
+                color: black;
+            }
+            .img_logo {
+                grid-area: img_logo;
+                height: 53px;
+                align-self: flex-end;
+            }
+            @include mq_lg() {
+                justify-items: center;
+                align-items: center;
+                column-gap: 1rem;
+                grid-template-columns: 1fr minmax(337px, 385px) auto minmax(337px, 385px) 1fr;
+                grid-template-rows: auto auto auto;
+                grid-template-areas:
+                    ". img img_logo h3  ."
+                    ". img img_logo description  .";
+                .h3 {
+                    justify-self: start;
+                }
+                .img_logo {
+                    align-self: center;
+                }
+                .description {
+                    justify-self: start;
+                }
+            }
+        }
+        .card_green_globes {
+            grid-area: card_green_globes;
+
+            width: 100%;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            grid-template-columns: 1fr 10fr 1fr;
+            grid-template-rows: auto auto 50px auto;
+            grid-template-areas:
+                ". h3 ."
+                ". img ."
+                ". img_logo ."
+                ". description .";
+            .h3 {
+                grid-area: h3;
+
+                // text-align: center;
+                font-family: $font-family-montserrat;
+                font-size: 1.35rem;
+                font-weight: 600;
+                letter-spacing: 1px;
+                line-height: 1.5rem;
+                color: black;
+            }
+            .img {
+                grid-area: img;
+
+                width: 100%;
+            }
+
+            .description {
+                grid-area: description;
+                font-family: $font-family-roboto;
+                font-size: 0.9rem;
+                font-weight: 400;
+                letter-spacing: 1px;
+                line-height: 1.5rem;
+                color: black;
+            }
+            .img_logo {
+                grid-area: img_logo;
+                height: 126px;
+                align-self: flex-end;
+            }
+            @include mq_lg() {
+                justify-items: center;
+                align-items: center;
+                column-gap: 1rem;
+                grid-template-columns: 1fr minmax(337px, 385px) auto minmax(337px, 385px) 1fr;
+                grid-template-rows: auto auto auto;
+                grid-template-areas:
+                    ". img img_logo h3  ."
+                    ". img img_logo description  .";
+                .h3 {
+                    justify-self: start;
+                }
+                .img_logo {
+                    align-self: center;
+                }
+                .description {
+                    justify-self: start;
+                }
+            }
+        }
+
+        .card_highland_drive {
+            grid-area: card_highland_drive;
+
+            width: 100%;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            grid-template-columns: 1fr 10fr 1fr;
+            grid-template-rows: auto auto 50px auto;
+            grid-template-areas:
+                ". h3 ."
+                ". img ."
+                ". img_logo ."
+                ". description .";
+
+            .h3 {
+                grid-area: h3;
+
+                text-align: center;
+                font-family: $font-family-montserrat;
+                font-size: 1.35rem;
+                font-weight: 600;
+                letter-spacing: 1px;
+                line-height: 1.5rem;
+                color: black;
+            }
+            .img {
+                grid-area: img;
+
+                width: 100%;
+            }
+            .img_logo {
+                grid-area: img_logo;
+
+                z-index: 2;
+                background-color: white;
+                align-self: flex-end;
+            }
+            .description {
+                grid-area: description;
+
+                font-family: $font-family-roboto;
+                font-size: 0.9rem;
+                font-weight: 400;
+                letter-spacing: 1px;
+                line-height: 1.5rem;
+                color: black;
+            }
+            @include mq_lg() {
+                justify-items: center;
+                align-items: center;
+                column-gap: 1rem;
+                grid-template-columns: 1fr minmax(337px, 385px) auto minmax(337px, 385px) 1fr;
+                grid-template-rows: auto auto auto;
+                grid-template-areas:
+                    ". img img_logo h3  ."
+                    ". img img_logo description  .";
+                .h3 {
+                    justify-self: start;
+                }
+                .img_logo {
+                    align-self: center;
+                }
+                .description {
+                    justify-self: start;
+                }
+            }
+        }
+        .card_lincoln_lane {
+            grid-area: card_lincoln_lane;
+
+            width: 100%;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            grid-template-columns: 1fr 10fr 1fr;
+            grid-template-rows: auto auto 50px auto;
+            grid-template-areas:
+                ". h3 ."
+                ". img ."
+                ". img_logo ."
+                ". description .";
+            .h3 {
+                grid-area: h3;
+
+                text-align: center;
+                font-family: $font-family-montserrat;
+                font-size: 1.35rem;
+                font-weight: 600;
+                letter-spacing: 1px;
+                line-height: 1.5rem;
+                color: black;
+            }
+            .img {
+                grid-area: img;
+
+                width: 100%;
+            }
+            .img_logo {
+                grid-area: img_logo;
+
+                z-index: 2;
+                background-color: white;
+                align-self: flex-end;
+            }
+            .description {
+                grid-area: description;
+
+                font-family: $font-family-roboto;
+                font-size: 0.9rem;
+                font-weight: 400;
+                letter-spacing: 1px;
+                line-height: 1.5rem;
+                color: black;
+            }
+            @include mq_lg() {
+                justify-items: center;
+                align-items: center;
+                column-gap: 1rem;
+                grid-template-columns: 1fr minmax(337px, 385px) auto minmax(337px, 385px) 1fr;
+                grid-template-rows: auto auto auto;
+                grid-template-areas:
+                    ". img img_logo h3  ."
+                    ". img img_logo description  .";
+                .h3 {
+                    justify-self: start;
+                }
+                .img_logo {
+                    align-self: center;
+                }
+                .description {
+                    justify-self: start;
+                }
+            }
+        }
+        .section_summary {
+            grid-area: section_summary;
+
+            width: 100%;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            grid-template-columns: 1fr 10fr 1fr;
+            grid-template-areas: ". paragraph_wrapper .";
+
+            .paragraph_wrapper {
+                grid-area: paragraph_wrapper;
+
+                padding-bottom: 2rem;
+
+                text-indent: 1.5rem;
+                text-align: left;
+                font-family: $font-family-roboto;
+                font-size: 1rem;
+                font-weight: 400;
+                letter-spacing: 1px;
+                line-height: 1.5rem;
+                color: black;
+            }
+        }
+    }
+    .section_non_certifications {
+        grid-area: section_non_certifications;
+
+        background-color: $color-rust;
+
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px;
+        row-gap: 2rem;
+        grid-template-areas:
+            "section_title"
+            "card_us_bureau_of_reclamation"
+            "card_slc_fire_station"
+            "section_summary";
+        .section_title {
+            grid-area: section_title;
+            align-self: flex-end;
+
+            text-align: center;
+            font-family: $font-family-montserrat;
+            font-size: 1.35rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            line-height: 1.5rem;
+            color: white;
+
+            border: 3px solid black;
+            width: 250px;
+            height: 50px;
+            padding: 10px 0;
+        }
+        .card_us_bureau_of_reclamation {
+            grid-area: card_us_bureau_of_reclamation;
+
+            width: 100%;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            grid-template-columns: 1fr 10fr 1fr;
+            grid-template-rows: auto auto auto;
+            grid-template-areas:
+                ". h3 ."
+                ". img ."
+                ". description .";
+            .h3 {
+                grid-area: h3;
+
+                text-align: center;
+                font-family: $font-family-montserrat;
+                font-size: 1.35rem;
+                font-weight: 600;
+                letter-spacing: 1px;
+                line-height: 1.5rem;
+                color: white;
+            }
+            .img {
+                grid-area: img;
+
+                width: 100%;
+            }
+
+            .description {
+                grid-area: description;
+
+                font-family: $font-family-roboto;
+                font-size: 0.9rem;
+                font-weight: 400;
+                letter-spacing: 1px;
+                line-height: 1.5rem;
+                color: white;
+            }
+            @include mq_lg() {
+                justify-items: center;
+                align-items: center;
+                column-gap: 1rem;
+                grid-template-columns: 1fr 500px 500px 1fr;
+                grid-template-rows: auto auto;
+                grid-template-areas:
+                    ". img h3 ."
+                    ". img description .";
+                .h3 {
+                    justify-self: start;
+                    text-align: left;
+                }
+                .description {
+                    justify-self: start;
+                }
+            }
+        }
+        .card_slc_fire_station {
+            grid-area: card_slc_fire_station;
+            width: 100%;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            grid-template-columns: 1fr 10fr 1fr;
+            grid-template-rows: auto auto auto;
+            grid-template-areas:
+                ". h3 ."
+                ". img ."
+                ". description .";
+            .h3 {
+                grid-area: h3;
+
+                text-align: center;
+                font-family: $font-family-montserrat;
+                font-size: 1.35rem;
+                font-weight: 600;
+                letter-spacing: 1px;
+                line-height: 1.5rem;
+                color: white;
+            }
+            .img {
+                grid-area: img;
+
+                width: 100%;
+            }
+
+            .description {
+                grid-area: description;
+
+                font-family: $font-family-roboto;
+                font-size: 0.9rem;
+                font-weight: 400;
+                letter-spacing: 1px;
+                line-height: 1.5rem;
+                color: white;
+            }
+            @include mq_lg() {
+                justify-items: center;
+                align-items: center;
+                column-gap: 1rem;
+                grid-template-columns: 1fr 500px 500px 1fr;
+                grid-template-rows: auto auto;
+                grid-template-areas:
+                    ". img h3 ."
+                    ". img description .";
+                .h3 {
+                    justify-self: start;
+                    text-align: left;
+                }
+                .description {
+                    justify-self: start;
+                }
+            }
+        }
+        .section_summary {
+            grid-area: section_summary;
+
+            width: 100%;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            grid-template-columns: 1fr 10fr 1fr;
+            grid-template-areas: ". paragraph_wrapper .";
+
+            .paragraph_wrapper {
+                grid-area: paragraph_wrapper;
+
+                padding-bottom: 2rem;
+
+                text-indent: 1.5rem;
+                text-align: left;
+                font-family: $font-family-roboto;
+                font-size: 1rem;
+                font-weight: 400;
+                letter-spacing: 1px;
+                line-height: 1.5rem;
+                color: white;
+            }
+        }
+    }
+    .section_project_credits {
+        grid-area: section_project_credits;
+
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px;
+        row-gap: 2rem;
+        grid-template-areas:
+            "section_title"
+            "section_summary";
+        .section_title {
+            grid-area: section_title;
+            align-self: flex-end;
+
+            text-align: center;
+            font-family: $font-family-montserrat;
+            font-size: 1.35rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            line-height: 1.5rem;
+            color: black;
+
+            border: 3px solid black;
+            width: 250px;
+            height: 50px;
+            padding: 10px 0;
+        }
+        .section_summary {
+            grid-area: section_summary;
+
+            width: 100%;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            grid-template-columns: 1fr 10fr 1fr;
+            grid-template-areas: ". paragraph_wrapper .";
+
+            .paragraph_wrapper {
+                grid-area: paragraph_wrapper;
+
+                padding-bottom: 2rem;
+
+                text-indent: 1.5rem;
+                text-align: center;
+                font-family: $font-family-roboto;
+                font-size: 1rem;
+                font-weight: 400;
+                letter-spacing: 1px;
+                line-height: 1.5rem;
+                color: black;
+            }
+        }
+    }
+}

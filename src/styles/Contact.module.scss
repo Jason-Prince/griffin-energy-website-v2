@@ -1,0 +1,23 @@
+@import "variables";
+
+.page {
+    margin-top: 8rem;
+
+    display: grid;
+    row-gap: 4rem;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-areas:
+        ". header ."
+        ". cards .";
+    .header {
+        grid-area: header;
+
+        border: 3px solid black;
+        padding: 0 1rem;
+        font-family: $font-family-montserrat;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
+}

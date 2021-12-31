@@ -1,0 +1,82 @@
+@import "variables";
+@import "breakpoints";
+
+.page {
+    margin: 8rem 0;
+
+    display: grid;
+    row-gap: 4rem;
+    place-items: center;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-areas:
+        ". header ."
+        ". cards .";
+    .header {
+        grid-area: header;
+
+        border: 3px solid black;
+        padding: 0 1rem;
+        font-family: $font-family-montserrat;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
+    .cards {
+        grid-area: cards;
+
+        display: grid;
+        row-gap: 4rem;
+        grid-template-columns: 1fr;
+        .card {
+            display: grid;
+            place-items: center;
+            place-content: center;
+            grid-template-columns: 1fr minmax(400px, 1fr) 1fr;
+            grid-template-areas:
+                ". img ."
+                ". name ."
+                ". introduction ."
+                ". qualifications .";
+            .img {
+                grid-area: img;
+                width: 100%;
+            }
+            .name {
+                grid-area: name;
+
+                font-family: $font-family-montserrat;
+                letter-spacing: 1px;
+            }
+            .introduction {
+                grid-area: introduction;
+
+                padding: 0 1rem;
+                text-indent: 50px;
+                font-family: $font-family-roboto;
+                font-size: 1rem;
+                letter-spacing: 1px;
+                font-weight: 400;
+                line-height: 2rem;
+            }
+            .qualifications {
+                grid-area: qualifications;
+
+                padding: 0 1rem;
+                font-family: $font-family-roboto;
+                font-size: 1rem;
+                letter-spacing: 1px;
+                font-weight: 600;
+                line-height: 2rem;
+                justify-self: start;
+            }
+            @include mq_lg() {
+                justify-items: center;
+                align-items: center;
+                grid-template-columns: 1fr minmax(400px, 1fr) minmax(400px, 1fr) 1fr;
+                grid-template-areas:
+                    ". name name ."
+                    ". img introduction ."
+                    ". img qualifications .";
+            }
+        }
+    }
+}

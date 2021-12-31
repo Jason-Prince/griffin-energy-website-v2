@@ -1,0 +1,168 @@
+@import "variables";
+@import "breakpoints";
+
+.header {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    z-index: 11;
+
+    background-color: $color-blackish;
+    padding-top: 7px;
+    width: 100%;
+
+    display: grid;
+    place-items: center;
+    place-content: center;
+    grid-template-columns: minmax(100px, 1fr) 200px minmax(100px, 1fr);
+    grid-template-rows: 50px;
+    grid-template-areas:
+        ". logo menu"
+        ". menu_link_home ."
+        ". menu_link_services ."
+        ". menu_link_zero_net_energy ."
+        ". menu_link_building_certification ."
+        ". menu_link_aboutus ."
+        ". menu_link_latitudestudy ."
+        ". menu_link_contact ."
+        ". menu_link_linkedin .";
+
+    @include mq_sm() {
+        grid-template-columns: minmax(100px, 1fr) 250px minmax(100px, 1fr);
+    }
+    @include mq_lg() {
+        grid-template-rows: 30px 30px;
+    }
+    .logo {
+        grid-area: logo;
+
+        transform: translateY(-1px);
+        cursor: pointer;
+        .cls1 {
+            fill: $color-whitish;
+        }
+        .cls2 {
+            fill: $color-blue;
+        }
+        .cls3 {
+            fill: $color-green;
+        }
+        &:hover {
+            .cls1 {
+                fill: $color-rust;
+            }
+        }
+    }
+
+    .menu {
+        grid-area: menu;
+
+        margin-right: 1.5em;
+        margin-bottom: 7px;
+        font-family: $font-family-montserrat;
+        font-size: 0.8rem;
+        color: $color-whitish;
+        font-weight: 500;
+        cursor: pointer;
+        border: 2px solid $color-blackish;
+        padding: 2px 6px;
+        justify-self: end;
+        &:hover {
+            border: 2px solid $color-whitish;
+        }
+        @include mq_md() {
+            font-size: 1rem;
+        }
+        @include mq_lg() {
+            display: none;
+        }
+    }
+
+    .menu_link_home {
+        grid-area: menu_link_home;
+        margin: 0 0 10px 0;
+    }
+    .menu_link_services {
+        grid-area: menu_link_services;
+        margin: 10px 0;
+    }
+    .menu_link_zero_net_energy {
+        grid-area: menu_link_zero_net_energy;
+        margin: 10px 0;
+    }
+    .menu_link_building_certification {
+        grid-area: menu_link_building_certification;
+        margin: 10px 0;
+    }
+    .menu_link_aboutus {
+        grid-area: menu_link_aboutus;
+        margin: 10px 0;
+    }
+    .menu_link_latitudestudy {
+        grid-area: menu_link_latitudestudy;
+        margin: 10px 0;
+    }
+    .menu_link_contact {
+        grid-area: menu_link_contact;
+        margin: 10px 0;
+    }
+    .menu_link_linkedin {
+        grid-area: menu_link_linkedin;
+        margin: 10px 0;
+    }
+    .menu_link_name {
+        text-decoration: none;
+        font-family: $font-family-montserrat;
+        font-size: 1.25rem;
+        letter-spacing: 0.6px;
+        white-space: nowrap;
+        padding: 2px 6px;
+        cursor: pointer;
+        color: $color-whitish;
+        border: 2px solid $color-blackish;
+        &:hover {
+            border-color: $color-whitish;
+        }
+    }
+
+    .nav_links {
+        position: absolute;
+        top: -8px;
+        right: 0;
+        z-index: 0;
+
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
+
+        width: 100%;
+        margin-top: 4px;
+        padding-bottom: 8px;
+        background-color: $color-blackish;
+
+        display: none;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        align-items: center;
+        gap: 10px;
+        @include mq_lg() {
+            display: grid;
+            grid-template-columns: 5fr repeat(7, 1fr) 5fr;
+            .nav_link {
+                cursor: pointer;
+                .nav_link_name {
+                    text-decoration: none;
+                    font-family: $font-family-montserrat;
+                    font-size: 1.1rem;
+                    letter-spacing: 0.6px;
+                    white-space: nowrap;
+                    color: $color-whitish;
+                    padding: 2px 6px;
+                    border: 2px solid $color-blackish;
+                    &:hover {
+                        border-color: $color-whitish;
+                    }
+                }
+            }
+        }
+    }
+}

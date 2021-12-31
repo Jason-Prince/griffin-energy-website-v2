@@ -1,0 +1,25 @@
+@mixin mq_sm() {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+@mixin mq_md() {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin mq_lg() {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+@mixin mq_xl() {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+@mixin mq_2xl() {
+  @media (min-width: 1536px) {
+    @content;
+  }
+}

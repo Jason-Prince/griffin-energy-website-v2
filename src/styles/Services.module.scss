@@ -1,0 +1,198 @@
+@import "variables";
+@import "breakpoints";
+
+.page {
+    margin: 8rem 0;
+    display: grid;
+    place-items: center;
+    place-content: center;
+    grid-template-columns: 1fr 20fr 1fr;
+    grid-template-areas:
+        ". page_title ."
+        ". cards .";
+    .page_title {
+        grid-area: page_title;
+    }
+    .cards {
+        grid-area: cards;
+
+        display: grid;
+        place-items: center;
+        place-content: center;
+        row-gap: 4rem;
+        grid-template-columns: 1fr;
+        .card {
+            display: grid;
+            justify-items: center;
+            grid-template-columns: 1fr;
+            overflow: hidden;
+            .heading {
+            }
+            .images {
+                display: grid;
+                grid-template-columns: 1fr;
+                overflow: scroll;
+                aspect-ratio: 1.42 / 1;
+                .image {
+                }
+            }
+            .paragraphs {
+                .paragraph {
+                    text-indent: 50px;
+                }
+            }
+            .list_items {
+                .list_item {
+                }
+            }
+            @include mq_lg() {
+                grid-template-columns: 1fr 1fr;
+                place-items: center;
+                place-content: center;
+                column-gap: 2rem;
+            }
+        }
+    }
+}
+
+// .services {
+//   margin: 100px 0;
+
+//   display: grid;
+//   justify-items: center;
+//   align-items: center;
+//   row-gap: 4rem;
+//   grid-template-columns: 1fr 400px 1fr;
+//   grid-template-areas:
+//     ". card_wbem ."
+//     ". card_hr .";
+//   // Whole Building Energy Modeling
+//   .card_wbem {
+//     grid-area: card_wbem;
+
+//     padding: 1rem 1.7rem;
+//     background-color: $color-rust;
+//     color: $color-whitish;
+//     border-radius: 10px;
+//     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
+//       rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+//       rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+//     display: grid;
+//     justify-items: center;
+//     row-gap: 1rem;
+//     grid-template-columns: 1fr 300px 1fr;
+//     grid-template-areas:
+//       ". title_wbem ."
+//       ". image_wbem ."
+//       ". paragraph_wbem ."
+//       ". bullets_wbem .";
+//     @include mq_lg() {
+//       width: 900px;
+//       column-gap: 3rem;
+//       row-gap: 0rem;
+//       align-items: center;
+//       grid-template-columns: 400px 1fr;
+//       grid-template-areas:
+//         "title_wbem title_wbem"
+//         "image_wbem paragraph_wbem"
+//         "image_wbem bullets_wbem";
+//     }
+
+//     .image_wbem {
+//       grid-area: image_wbem;
+//       width: 100%;
+//       box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
+//         rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+//         rgba(0, 0, 0, 0.09) 0px -3px 5px;
+//     }
+//     .title_wbem {
+//       grid-area: title_wbem;
+
+//       font-family: $font-family-montserrat;
+//       font-weight: 600;
+//       font-size: 1rem;
+//       letter-spacing: 1px;
+//       text-align: center;
+//     }
+//     .paragraph_wbem {
+//       grid-area: paragraph_wbem;
+
+//       font-family: $font-family-roboto;
+//       font-weight: 300;
+//       letter-spacing: 0.5px;
+//     }
+//     .bullets_wbem {
+//       grid-area: bullets_wbem;
+//       justify-self: start;
+
+//       font-family: $font-family-roboto;
+//       font-weight: 300;
+//       letter-spacing: 0.5px;
+//     }
+//   }
+
+//   // HERS Rating
+//   .card_hr {
+//     grid-area: card_hr;
+
+//     padding: 1rem 1.7rem;
+//     background-color: $color-rust;
+//     color: $color-whitish;
+//     border-radius: 10px;
+//     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
+//       rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+//       rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+//     display: grid;
+//     justify-items: center;
+//     row-gap: 1rem;
+//     grid-template-columns: 1fr 300px 1fr;
+//     grid-template-areas:
+//       ". title_hr ."
+//       ". image_hr ."
+//       ". paragraph_hr ."
+//       ". bullets_hr .";
+//     @include mq_lg() {
+//       width: 900px;
+//       column-gap: 3rem;
+//       row-gap: 0rem;
+//       align-items: center;
+//       grid-template-columns: 1fr 400px;
+//       grid-template-areas:
+//         "title_hr title_hr"
+//         "paragraph_hr image_hr"
+//         "bullets_hr image_hr";
+//     }
+//     .image_hr {
+//       grid-area: image_hr;
+//       width: 100%;
+//       box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
+//         rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+//         rgba(0, 0, 0, 0.09) 0px -3px 5px;
+//     }
+//     .title_hr {
+//       grid-area: title_hr;
+
+//       font-family: $font-family-montserrat;
+//       font-weight: 600;
+//       font-size: 1rem;
+//       letter-spacing: 1px;
+//     }
+//     .paragraph_hr {
+//       grid-area: paragraph_hr;
+
+//       font-family: $font-family-roboto;
+//       font-weight: 300;
+//       letter-spacing: 0.5px;
+//     }
+//     .bullets_hr {
+//       grid-area: bullets_hr;
+//       justify-self: start;
+
+//       font-family: $font-family-roboto;
+//       font-weight: 300;
+//       letter-spacing: 0.5px;
+//     }
+//   }
+// }

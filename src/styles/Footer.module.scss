@@ -1,0 +1,252 @@
+@import "variables";
+@import "breakpoints";
+
+.grid_wrapper {
+  display: grid;
+  row-gap: 1rem;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "info"
+    "field"
+    "copyright";
+  @include mq_lg() {
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      ". info field ."
+      ". copyright copyright .";
+  }
+  .grid_copyright {
+    grid-area: copyright;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-self: center;
+    .item_copyright {
+      font-family: $font-family-montserrat;
+      letter-spacing: 1px;
+      font-weight: 300;
+    }
+  }
+  .item_info {
+    grid-area: info;
+    align-self: flex-start;
+    .item_info_wrapper {
+      display: grid;
+      justify-items: center;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "phone"
+        "email"
+        "location";
+      @include mq_lg() {
+        row-gap: 2rem;
+      }
+      .grid_info_phone {
+        grid-area: phone;
+
+        margin: 0.5rem 0;
+        font-family: $font-family-montserrat;
+        font-size: 1rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+
+        display: grid;
+        column-gap: 1rem;
+        align-items: center;
+        grid-template-columns: 1fr auto 174px 1fr;
+        grid-template-areas: ". icon info .";
+        .item_icon {
+          grid-area: icon;
+
+          max-width: 20px;
+          justify-self: end;
+        }
+        .item_info {
+          grid-area: info;
+
+          justify-self: start;
+          max-width: 174px;
+        }
+      }
+      .grid_info_email {
+        grid-area: email;
+
+        margin: 0.5rem 0;
+        font-family: $font-family-montserrat;
+        font-size: 1rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+
+        display: grid;
+        column-gap: 1rem;
+        align-items: center;
+        grid-template-columns: 1fr auto 175px 1fr;
+        grid-template-areas: ". icon info .";
+        .item_icon {
+          grid-area: icon;
+
+          max-width: 20px;
+          justify-self: end;
+        }
+        .item_info {
+          grid-area: info;
+
+          max-width: 175px;
+        }
+      }
+      .grid_info_location {
+        grid-area: location;
+
+        margin: 0.5rem 0;
+        font-family: $font-family-montserrat;
+        font-size: 1rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+
+        display: grid;
+        column-gap: 1rem;
+        align-items: center;
+        grid-template-columns: 1fr auto 175px 1fr;
+        grid-template-areas: ". icon info .";
+
+        .item_icon {
+          grid-area: icon;
+
+          max-width: 20px;
+          justify-self: end;
+        }
+        .item_info {
+          grid-area: info;
+
+          max-width: 175px;
+        }
+      }
+    }
+  }
+  .item_field {
+    grid-area: field;
+    .grid_field {
+      grid-area: grid_field;
+
+      margin: 0.5rem 0;
+
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      grid-template-columns: 1fr 400px 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas:
+        ". label ."
+        ". input .";
+      .item_label {
+        grid-area: label;
+
+        width: 350px;
+        height: 30px;
+
+        font-family: $font-family-montserrat;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        text-align: center;
+        font-weight: 500;
+        @include mq_lg() {
+          text-align: left;
+        }
+      }
+      .item_input {
+        grid-area: input;
+
+        width: 350px;
+        height: 30px;
+        border-radius: 10px;
+        border: 1px solid black;
+
+        text-align: center;
+        font-family: $font-family-roboto;
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: 1px;
+        @include mq_lg() {
+          text-align: left;
+        }
+
+        &:hover {
+          border-color: $color-rust;
+        }
+      }
+    }
+
+    .grid_message {
+      margin: 0.5rem 0;
+
+      display: grid;
+      grid-template-columns: 1fr 350px 1fr;
+      grid-template-areas:
+        ". label ."
+        ". textarea .";
+      .item_label {
+        grid-area: label;
+
+        width: 350px;
+        height: 30px;
+
+        font-family: $font-family-montserrat;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        text-align: center;
+        font-weight: 500;
+        @include mq_lg() {
+          text-align: left;
+        }
+      }
+      .item_textarea {
+        grid-area: textarea;
+
+        width: 350px;
+        height: 90px;
+        border-radius: 10px;
+        border: 1px solid black;
+
+        text-align: left;
+        font-family: $font-family-roboto;
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: 1px;
+
+        &:hover {
+          border-color: $color-rust;
+        }
+      }
+    }
+
+    .grid_submit {
+      margin: 1rem 0;
+      display: grid;
+      grid-template-columns: 1fr 350px 1fr;
+      grid-template-areas: ". btn .";
+      .item_btn {
+        grid-area: btn;
+
+        width: 350px;
+        height: 35px;
+        border-radius: 100px;
+        border: 1px solid black;
+        background-color: white;
+
+        font-family: $font-family-montserrat;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        text-align: center;
+        font-weight: 500;
+
+        cursor: pointer;
+        &:hover {
+          background-color: black;
+          color: white;
+        }
+      }
+    }
+  }
+}
